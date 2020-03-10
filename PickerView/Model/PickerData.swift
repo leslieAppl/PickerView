@@ -32,3 +32,16 @@ struct PickerData {
 }
 
 var pickerData = PickerData()
+
+extension Date {
+    
+    func getDateString() -> String {
+        
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: self as Date)
+        
+        return "\(year)"
+        
+    }
+
+}

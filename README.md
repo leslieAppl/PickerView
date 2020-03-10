@@ -1,5 +1,11 @@
 # Picker View
 
 - Added Picker View
-- Implemented 'selectedRow(inComponent: 0)' method to get the current selected value.
 
+- Using 'selectedRow(inComponent: 0)' to get the current selected value.
+
+- Added Date extension
+        
+        func getDateString( ) -> String
+        
+- Using 'selectRow(row, inComponent: 0, animated: false)' select initial value

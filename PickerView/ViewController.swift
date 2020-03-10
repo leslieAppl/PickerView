@@ -19,7 +19,19 @@ class ViewController: UIViewController {
         pickerYears.dataSource = self
         pickerYears.delegate = self
         
+        selectInitialValue()
     }
+    
+    func selectInitialValue() {
+        
+        let myDate = Date()
+        let year = myDate.getDateString()
+        
+        guard let row = pickerData.years.firstIndex(of: year) else { return }
+        pickerYears.selectRow(row, inComponent: 0, animated: false)
+        
+    }
+    
 
     @IBAction func readValueBtnPressed(_ sender: UIButton) {
         // Component means 'Section' in the Picker View.
