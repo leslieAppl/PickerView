@@ -13,6 +13,7 @@
 		CE963A1824177FBE0050164E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE963A1624177FBE0050164E /* Main.storyboard */; };
 		CE963A1A24177FC10050164E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE963A1924177FC10050164E /* Assets.xcassets */; };
 		CE963A1D24177FC10050164E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE963A1B24177FC10050164E /* LaunchScreen.storyboard */; };
+		CE963A28241780D70050164E /* PickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE963A27241780D70050164E /* PickerData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CE963A1924177FC10050164E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE963A1C24177FC10050164E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE963A1E24177FC10050164E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE963A27241780D70050164E /* PickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,9 @@
 		CE963A0F24177FBE0050164E /* PickerView */ = {
 			isa = PBXGroup;
 			children = (
+				CE963A2624177FE60050164E /* Model */,
+				CE963A2524177FE20050164E /* View */,
+				CE963A2424177FD90050164E /* Controller */,
 				CE963A1024177FBE0050164E /* AppDelegate.swift */,
 				CE963A1224177FBE0050164E /* SceneDelegate.swift */,
 				CE963A1424177FBE0050164E /* ViewController.swift */,
@@ -65,6 +70,28 @@
 				CE963A1E24177FC10050164E /* Info.plist */,
 			);
 			path = PickerView;
+			sourceTree = "<group>";
+		};
+		CE963A2424177FD90050164E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CE963A2524177FE20050164E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE963A2624177FE60050164E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE963A27241780D70050164E /* PickerData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +168,7 @@
 				CE963A1524177FBE0050164E /* ViewController.swift in Sources */,
 				CE963A1124177FBE0050164E /* AppDelegate.swift in Sources */,
 				CE963A1324177FBE0050164E /* SceneDelegate.swift in Sources */,
+				CE963A28241780D70050164E /* PickerData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
