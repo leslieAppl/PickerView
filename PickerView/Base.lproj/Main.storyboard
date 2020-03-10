@@ -41,13 +41,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDn-OI-zxa">
+                                <rect key="frame" x="16" y="474" width="150" height="30"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hPz-gl-V8c"/>
+                                    <constraint firstAttribute="width" constant="150" id="uoE-lQ-3fO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Read Value">
+                                    <color key="titleColor" red="0.29852169750000002" green="0.75442785020000003" blue="0.33716404439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="readValueBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rDH-hY-xji"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="bDn-OI-zxa" firstAttribute="top" secondItem="N5S-T2-zSh" secondAttribute="bottom" constant="8" symbolic="YES" id="99B-1B-Leb"/>
                             <constraint firstItem="N5S-T2-zSh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="9rY-h1-Ok4"/>
                             <constraint firstItem="Ran-vS-qH0" firstAttribute="top" secondItem="qDK-eY-RnG" secondAttribute="bottom" constant="8" symbolic="YES" id="BFA-Av-r3n"/>
                             <constraint firstItem="Ran-vS-qH0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ibd-dS-ZO0"/>
                             <constraint firstItem="N5S-T2-zSh" firstAttribute="top" secondItem="Ran-vS-qH0" secondAttribute="bottom" constant="8" symbolic="YES" id="Yh6-CC-f8m"/>
+                            <constraint firstItem="bDn-OI-zxa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="goM-Oe-agO"/>
                             <constraint firstItem="N5S-T2-zSh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hz8-n4-Ftw"/>
                             <constraint firstItem="qDK-eY-RnG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="kTH-5I-qXz"/>
                         </constraints>

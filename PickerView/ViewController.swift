@@ -21,7 +21,12 @@ class ViewController: UIViewController {
         
     }
 
-
+    @IBAction func readValueBtnPressed(_ sender: UIButton) {
+        // Component means 'Section' in the Picker View.
+        let row = pickerYears.selectedRow(inComponent: 0)
+        showYearLbl.text = pickerData.years[row]
+    }
+    
 }
 
 extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
