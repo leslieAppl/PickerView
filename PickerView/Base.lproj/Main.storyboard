@@ -31,6 +31,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="RHc-Tu-OhY">
+                                <rect key="frame" x="199" y="309" width="150" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Nee-PQ-1qk"/>
+                                    <constraint firstAttribute="height" constant="29" id="mpK-0q-lD9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This year is:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDK-eY-RnG">
                                 <rect key="frame" x="16" y="272" width="150" height="29"/>
                                 <constraints>
@@ -64,16 +74,31 @@
                                     <action selector="readValueBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rDH-hY-xji"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="RHc-Tu-OhY">
-                                <rect key="frame" x="199" y="309" width="150" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEE-9y-6da">
+                                <rect key="frame" x="112.66666666666669" y="516" width="150" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="Nee-PQ-1qk"/>
-                                    <constraint firstAttribute="height" constant="29" id="mpK-0q-lD9"/>
+                                    <constraint firstAttribute="height" constant="40" id="1b5-Ow-hyw"/>
+                                    <constraint firstAttribute="width" constant="150" id="6bu-yb-1Z9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udA-W5-sWx">
+                                <rect key="frame" x="112.66666666666669" y="564" width="150" height="40"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="26i-2D-GnD"/>
+                                    <constraint firstAttribute="height" constant="40" id="wN9-WS-G7B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="GET DATE!!">
+                                    <color key="titleColor" red="0.015686274510000001" green="0.6705882353" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="getDateBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AhS-0D-S8b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -83,18 +108,23 @@
                             <constraint firstItem="N5S-T2-zSh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="9rY-h1-Ok4"/>
                             <constraint firstItem="Ran-vS-qH0" firstAttribute="top" secondItem="qDK-eY-RnG" secondAttribute="bottom" constant="8" symbolic="YES" id="BFA-Av-r3n"/>
                             <constraint firstItem="Ran-vS-qH0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ibd-dS-ZO0"/>
+                            <constraint firstItem="udA-W5-sWx" firstAttribute="top" secondItem="VEE-9y-6da" secondAttribute="bottom" constant="8" id="X5F-PD-uqo"/>
+                            <constraint firstItem="VEE-9y-6da" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XO2-eo-1Qi"/>
                             <constraint firstItem="N5S-T2-zSh" firstAttribute="top" secondItem="Ran-vS-qH0" secondAttribute="bottom" constant="8" symbolic="YES" id="Yh6-CC-f8m"/>
                             <constraint firstItem="ell-xJ-INB" firstAttribute="leading" secondItem="Ran-vS-qH0" secondAttribute="trailing" constant="4" id="dSJ-18-V9H"/>
                             <constraint firstItem="bDn-OI-zxa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="goM-Oe-agO"/>
                             <constraint firstItem="N5S-T2-zSh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hz8-n4-Ftw"/>
                             <constraint firstItem="RHc-Tu-OhY" firstAttribute="centerY" secondItem="ell-xJ-INB" secondAttribute="centerY" id="jpo-Bn-0qw"/>
                             <constraint firstItem="qDK-eY-RnG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="kTH-5I-qXz"/>
+                            <constraint firstItem="udA-W5-sWx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qlV-fc-35g"/>
+                            <constraint firstItem="VEE-9y-6da" firstAttribute="top" secondItem="N5S-T2-zSh" secondAttribute="bottom" constant="50" id="yPD-em-GWz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="pickerYears" destination="N5S-T2-zSh" id="boe-PE-Qvv"/>
                         <outlet property="showCountryLbl" destination="RHc-Tu-OhY" id="jlC-lA-dTg"/>
+                        <outlet property="showDateLbl" destination="VEE-9y-6da" id="vea-j2-UbJ"/>
                         <outlet property="showYearLbl" destination="Ran-vS-qH0" id="aoZ-P0-vZ6"/>
                     </connections>
                 </viewController>

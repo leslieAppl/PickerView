@@ -29,6 +29,21 @@ struct PickerData {
         }
         
     }
+    
+    func getDate(from yyyy: Int, mm: Int, dd: Int) -> Date {
+        
+        let calendar = Calendar.current
+        
+        var components = DateComponents()
+        components.year = yyyy
+        components.month = mm
+        components.day = dd
+        
+        guard let newDate = calendar.date(from: components) else { return Date() }
+        
+        return newDate
+    }
+
 }
 
 var pickerData = PickerData()
@@ -43,7 +58,7 @@ extension PickerData {
 }
 extension Date {
     
-    func getDateString() -> String {
+    func getCurrentDateString() -> String {
         
         let calendar = Calendar.current
         let year = calendar.component(.year, from: self as Date)
@@ -51,5 +66,6 @@ extension Date {
         return "\(year)"
         
     }
-
+    
 }
+

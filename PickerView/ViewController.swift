@@ -10,23 +10,31 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let datePicker = UIDatePicker(frame: CGRect(x: 65, y: 0, width: 250, height: 200))
+
     @IBOutlet weak var showYearLbl: UILabel!
     @IBOutlet weak var showCountryLbl: UILabel!
     @IBOutlet weak var pickerYears: UIPickerView!
     
+    @IBOutlet weak var showDateLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         pickerYears.dataSource = self
         pickerYears.delegate = self
         
         selectInitialValue()
+        
+        initDatePicker()
+        
     }
     
     func selectInitialValue() {
         
         let myDate = Date()
-        let year = myDate.getDateString()
+        let year = myDate.getCurrentDateString()
         
         guard let initRowOfYear = pickerData.years.firstIndex(of: year) else { return }
         guard let initRowOfCountry = pickerData.countriesList.firstIndex(where: { (name, _) -> Bool in
@@ -38,7 +46,27 @@ class ViewController: UIViewController {
         
     }
     
-
+    func initDatePicker() {
+        
+//        datePicker.datePickerMode = .date
+        datePicker.datePickerMode = .dateAndTime
+//        datePicker.calendar = .current
+        
+        selectInitialDate()
+        
+        self.view.addSubview(datePicker)
+        
+    }
+    
+    func selectInitialDate() {
+                
+        let selectedDate = pickerData.getDate(from: 1980, mm: 02, dd: 14)
+        print(selectedDate)
+//        datePicker.date = selectedDate
+        datePicker.setDate(selectedDate, animated: true)
+        
+    }
+    
     @IBAction func readValueBtnPressed(_ sender: UIButton) {
         // Component means 'Section' in the Picker View.
         let rowOfYear = pickerYears.selectedRow(inComponent: 0)
@@ -46,6 +74,15 @@ class ViewController: UIViewController {
         
         showYearLbl.text = pickerData.years[rowOfYear]
         showCountryLbl.text = pickerData.countriesList[rowOfCountry].name
+    }
+    
+    @IBAction func getDateBtnPressed(_ sender: UIButton) {
+        
+        let selectedDate = datePicker.date
+        let format = DateFormatter()
+        format.dateStyle = .medium
+        
+        showDateLbl.text = "Date: \(format.string(from: selectedDate))"
     }
     
 }
