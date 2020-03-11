@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var showYearLbl: UILabel!
+    @IBOutlet weak var showCountryLbl: UILabel!
     @IBOutlet weak var pickerYears: UIPickerView!
     
     override func viewDidLoad() {
@@ -27,16 +28,24 @@ class ViewController: UIViewController {
         let myDate = Date()
         let year = myDate.getDateString()
         
-        guard let row = pickerData.years.firstIndex(of: year) else { return }
-        pickerYears.selectRow(row, inComponent: 0, animated: false)
+        guard let initRowOfYear = pickerData.years.firstIndex(of: year) else { return }
+        guard let initRowOfCountry = pickerData.countriesList.firstIndex(where: { (name, _) -> Bool in
+            name == "China"
+        }) else { return }
+        
+        pickerYears.selectRow(initRowOfYear, inComponent: 0, animated: false)
+        pickerYears.selectRow(initRowOfCountry, inComponent: 1, animated: false)
         
     }
     
 
     @IBAction func readValueBtnPressed(_ sender: UIButton) {
         // Component means 'Section' in the Picker View.
-        let row = pickerYears.selectedRow(inComponent: 0)
-        showYearLbl.text = pickerData.years[row]
+        let rowOfYear = pickerYears.selectedRow(inComponent: 0)
+        let rowOfCountry = pickerYears.selectedRow(inComponent: 1)
+        
+        showYearLbl.text = pickerData.years[rowOfYear]
+        showCountryLbl.text = pickerData.countriesList[rowOfCountry].name
     }
     
 }
@@ -45,22 +54,37 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     //MARK: - Picker Data Source
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.years.count
+        
+        if component == 1 {
+            return pickerData.countriesList.count
+        } else {
+            return pickerData.years.count
+        }
     }
     
     //MARK: - Picker Delegate
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData.years[row]
+        
+        if component == 1 {
+            return pickerData.countriesList[row].name
+        } else {
+            return pickerData.years[row]
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        let year = pickerData.years[row]
-        showYearLbl.text = year
+        if component == 0 {
+            let year = pickerData.years[row]
+            showYearLbl.text = year
+        } else {
+            let country = pickerData.countriesList[row].name
+            showCountryLbl.text = country
+        }
         
     }
 }
