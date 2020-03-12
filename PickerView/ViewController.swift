@@ -35,6 +35,7 @@ class ViewController: UIViewController {
     
     @objc func updatePicker(sender: Timer) {
         picker.date = Date()
+        datePicker.date = Date()
     }
     
     func selectInitialValue() {
