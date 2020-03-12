@@ -13,3 +13,5 @@
 - Updated to Multiple Picker View
 
 - Created Date Picker from Code
+
+- Implemented Timer to update Date Picker

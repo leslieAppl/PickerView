@@ -58,7 +58,7 @@ extension PickerData {
 }
 extension Date {
     
-    func getCurrentDateString() -> String {
+    func getCurrentYearString() -> String {
         
         let calendar = Calendar.current
         let year = calendar.component(.year, from: self as Date)
@@ -66,6 +66,7 @@ extension Date {
         return "\(year)"
         
     }
+    
     
 }
 

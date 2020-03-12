@@ -11,7 +11,8 @@ import UIKit
 class ViewController: UIViewController {
 
     let datePicker = UIDatePicker(frame: CGRect(x: 65, y: 0, width: 250, height: 200))
-
+    @IBOutlet weak var picker: UIDatePicker!
+    
     @IBOutlet weak var showYearLbl: UILabel!
     @IBOutlet weak var showCountryLbl: UILabel!
     @IBOutlet weak var pickerYears: UIPickerView!
@@ -29,12 +30,17 @@ class ViewController: UIViewController {
         
         initDatePicker()
         
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updatePicker(sender:)), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updatePicker(sender: Timer) {
+        picker.date = Date()
     }
     
     func selectInitialValue() {
         
         let myDate = Date()
-        let year = myDate.getCurrentDateString()
+        let year = myDate.getCurrentYearString()
         
         guard let initRowOfYear = pickerData.years.firstIndex(of: year) else { return }
         guard let initRowOfCountry = pickerData.countriesList.firstIndex(where: { (name, _) -> Bool in
